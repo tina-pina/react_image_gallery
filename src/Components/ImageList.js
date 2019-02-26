@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
 import Image from './Image';
+import NoImage from './NoImage'
 
 class ImageList extends Component {
 
-
     render() {
-
+        let ListImages = this.props.imageList;
+        let images;
+        if (ListImages.length == 0) {
+            images = <NoImage />
+        }
+        else {
+            images = this.props.imageList.map((image, index) => (
+                <Image
+                    {...image}
+                    key={image.id.toString()}
+                    index={index}
+                />
+            ))
+        }
 
         return (
             <div className="photo-container">
-                <h2>your Results: </h2>
                 <ul>
-                    {this.props.imageList.map((image, index) => (
+                    {/* {this.props.imageList.map((image, index) => (
                         <Image
                             {...image}
                             key={image.id.toString()}
                             index={index}
                         />
-                    ))}
+                    ))} */}
+                    {images}
                 </ul>
             </div>
         )

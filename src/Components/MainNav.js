@@ -10,7 +10,7 @@ class MainNav extends Component {
     render() {
         return (
             <nav className="main-nav">
-                <ul className="nav justify-content-end">
+                <ul className="nav justify-content-center">
                     <li className="nav-item Cats">
                         <a href="#" onClick={this.handleClickedButton.bind(this, 'cats')}
                         >Cats

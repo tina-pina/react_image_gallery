@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Components/Header';
-import SearchForm from './Components/SearchForm';
-import MainNav from './Components/MainNav';
-import ImageList from './Components/ImageList';
-import Home from './Components/Home';
 import Footer from './Components/Footer';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Home from './Components/Home';
+import NotFound from './Components/NotFound';
 
 
 import {
@@ -21,7 +21,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      imagesList: []
+      imagesList: [],
+      loading: false
     };
   }
 
@@ -36,10 +37,11 @@ class App extends Component {
   }
 
   performSearch = (searchTerm = this.generateSearchTerm()) => {
+    this.setState({ loading: true });
     fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7a95085986cfa5e8dbd38965cb4f9dba&per_page=24&format=json&nojsoncallback=1&text=${searchTerm}`)
       .then(response => response.json())
       .then(responseData => {
-        this.setState({ imagesList: responseData.photos.photo });
+        this.setState({ imagesList: responseData.photos.photo, loading: false });
       })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
@@ -47,17 +49,24 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.imagesList);
     return (
       <BrowserRouter>
-        <div className="App">
+        {/* <Switch> */}
+        <div className="App backgroundHeader">
           <Header />
-          {/* <Switch>
-            <Route exact path="/" component={Home} />
-          </Switch> */}
-          <SearchForm onSearch={this.performSearch} />
-          <MainNav searchDefault={this.performSearch} />
-          <ImageList imageList={this.state.imagesList} />
+          <Switch>
+            <Route exact path="/"
+              render={() => <Home
+                onSearch={this.performSearch}
+                searchDefault={this.performSearch}
+                imageList={this.state.imagesList}
+                isLoading={this.state.loading}
+              />}
+            />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+            <Route component={NotFound} />
+          </Switch>
           <Footer />
         </div>
       </BrowserRouter>

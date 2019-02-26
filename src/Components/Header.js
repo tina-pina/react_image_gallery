@@ -1,12 +1,13 @@
 import React from 'react';
+import About from './About';
+import Contact from './Contact';
 import { NavLink } from 'react-router-dom';
 
 // app title, logo, nav and search bar. 
 const Header = () => (
 
-    <div>
-        <h1><b>Welcome to this small image gallery app!</b></h1>
-        {/* <ul className="nav justify-content-end">
+    <div className="col-4 mx-auto pt-5">
+        <ul className="d-flex justify-content-between">
             <li className="nav-item">
                 <NavLink exact to="/">Home</NavLink>
             </li>
@@ -14,11 +15,12 @@ const Header = () => (
                 <NavLink exact to="/about">About</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink exact to="/more">More</NavLink>
+                <NavLink exact to="/contact">Contact</NavLink>
             </li>
-        </ul> */}
+        </ul>
+        <img className="logo" src={require('../camera.png')} />
+        <h1 className="headerText"><b>Pictures for Everyone</b></h1>
     </div>
-
 )
 
 export default Header;

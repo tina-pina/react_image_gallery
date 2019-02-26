@@ -2,12 +2,24 @@ body {
   text-align: center;
   font-family: 'Noto Sans JP', sans-serif;
   color: #3f4850;
+  background-color: #FF76FF;
 }
 
 h2 {
   font-size: 2em;
   margin: 52px 0 40px;
   text-transform: capitalize;
+}
+
+h1.headerText {
+  padding: 20px 10px;
+  color:#FF00FF;
+}
+
+img.logo {
+  padding-top: 50px;
+  height: 200px;
+  width: 150px;
 }
 
 ul {
@@ -23,6 +35,10 @@ a {
   display: inline-flex;
   justify-content: space-between;
 
+}
+
+.backgroundHeader {
+  background-image: url("./blackFlowers.jpg")
 }
 
 .search-form {
