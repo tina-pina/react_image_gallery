@@ -2,9 +2,8 @@ import React from 'react';
 
 const Footer = () => (
     <div>
-        <footer>
-            <p>Contact</p>
-            <p>My personal Website</p>
+        <footer className="pb-3">
+            <p style={{ color: '#C0C0C0' }}>@Christina Koenig</p>
         </footer>
     </div>
 )

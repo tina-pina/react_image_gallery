@@ -115,9 +115,13 @@ input {
   width: 100%;
 }
 
+footer {
+  margin-top: 100px;
+}
+
 @media only screen and (max-width: 767px)  {
   body {
-    padding-top: 2em;
+    padding: 2em 0;
   }
 
   .photo-container li {
@@ -127,7 +131,7 @@ input {
 
 @media only screen and (min-width: 768px)  {
   body {
-    padding-top: 4em;
+    padding: 4em 0;
   }
 
   .container {

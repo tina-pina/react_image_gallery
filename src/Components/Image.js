@@ -10,7 +10,7 @@ const Image = props => {
     let imageUrl = `https://farm${farm_id}.staticflickr.com/${server_id}/${id}_${secret}.jpg`;
 
     return (
-        <li className="">
+        <li className="img-fluid" style={{ minHeight: 206, objectFit: 'cover' }}>
             <img src={imageUrl} alt="" />
         </li>
     )

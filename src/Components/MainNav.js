@@ -11,17 +11,17 @@ class MainNav extends Component {
         return (
             <nav className="main-nav">
                 <ul className="nav justify-content-center">
-                    <li className="nav-item Cats">
+                    <li className="nav-item pt-3 pb-3 Cats">
                         <a href="#" onClick={this.handleClickedButton.bind(this, 'cats')}
                         >Cats
                         </a>
                     </li>
-                    <li className="nav-item Dogs">
+                    <li className="nav-item pt-3 pb-3 Dogs">
                         <a href="#" onClick={this.handleClickedButton.bind(this, 'dogs')}
                         >Dogs
                         </a>
                     </li>
-                    <li className="nav-item Computers">
+                    <li className="nav-item pt-3 pb-3 Computers">
                         <a href="#" onClick={this.handleClickedButton.bind(this, 'computers')}
                         >Computers
                         </a>
