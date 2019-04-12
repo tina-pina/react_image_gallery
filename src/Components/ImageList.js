@@ -7,7 +7,7 @@ class ImageList extends Component {
     render() {
         let ListImages = this.props.imageList;
         let images;
-        if (ListImages.length == 0) {
+        if (ListImages.length === 0) {
             images = <NoImage />
         }
         else {

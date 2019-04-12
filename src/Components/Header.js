@@ -1,6 +1,4 @@
 import React from 'react';
-import About from './About';
-import Contact from './Contact';
 import { NavLink } from 'react-router-dom';
 
 // app title, logo, nav and search bar. 
@@ -18,7 +16,7 @@ const Header = () => (
                 <NavLink exact to="/contact">Contact</NavLink>
             </li>
         </ul>
-        <img className="logo" src={require('../camera.png')} />
+        <img className="logo" src={require('../camera.png')} alt="logo" />
         <h1 className="headerText"><b>Pictures for Everyone</b></h1>
     </div>
 )

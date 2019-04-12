@@ -56,7 +56,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/"
-              render={() => <Home
+              render={() => <Home 
                 onSearch={this.performSearch}
                 searchDefault={this.performSearch}
                 imageList={this.state.imagesList}
